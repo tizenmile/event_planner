@@ -1,5 +1,5 @@
 'use client'
-import style from './hero.module.css'
+import style from './home.module.css'
 import Image from 'next/image'
 import plus from '../../../public/plus.svg'
 

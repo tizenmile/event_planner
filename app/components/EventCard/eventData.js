@@ -5,7 +5,8 @@ const event = [
     category: "art",
     priority: "High",
     image: image.src,
-    time: "12.07 at 12:00",
+    time: "12:00",
+    date: "2023-07-22",
     location: "kyiv",
     title: "Galery Opening",
     description:
@@ -16,7 +17,8 @@ const event = [
     category: "art",
     priority: "Low",
     image: image.src,
-    time: "12.07 at 12:00",
+    time: "12:00",
+    date: "2023-07-22",
     location: "kyiv",
     title: "Galery Opening",
     description:
@@ -27,7 +29,8 @@ const event = [
     category: "art",
     priority: "Medium",
     image: image.src,
-    time: "12.07 at 12:00",
+    time: "12:00",
+    date: "2023-07-22",
     location: "kyiv",
     title: "Galery Opening",
     description:
@@ -38,7 +41,8 @@ const event = [
     category: "art",
     priority: "Medium",
     image: image.src,
-    time: "12.07 at 12:00",
+    time: "12:00",
+    date: "2023-07-22",
     location: "kyiv",
     title: "Galery Opening",
     description:
@@ -49,7 +53,8 @@ const event = [
     category: "art",
     priority: "Medium",
     image: image.src,
-    time: "12.07 at 12:00",
+    time: "12:00",
+    date: "2023-07-22",
     location: "kyiv",
     title: "Galery Opening",
     description:
@@ -60,7 +65,8 @@ const event = [
     category: "art",
     priority: "Medium",
     image: image.src,
-    time: "12.07 at 12:00",
+    time: "12:00",
+    date: "2023-07-22",
     location: "kyiv",
     title: "Galery Opening",
     description:
@@ -71,11 +77,12 @@ const event = [
     category: "art",
     priority: "Medium",
     image: image.src,
-    time: "12.07 at 12:00",
+    time: "12:00",
+    date: "2023-07-22",
     location: "kyiv",
     title: "Galery Opening",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
   },
 ];
 const addEventData = (data) => {
@@ -83,7 +90,6 @@ const addEventData = (data) => {
     return event;
   } else {
       data.id = Object.keys(event).length + 1;
-      data.time = data.date + ' at ' + data.time
       data.image = 'https://picsum.photos/200/300'
     event.push(data);
     console.log(event);

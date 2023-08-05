@@ -26,7 +26,7 @@ const AddNew = ({ toggle, addEvent }) => {
           <div className="formDiv">
             <div className="inputDiv">
               <label className="label">Title</label>
-              <input className="input" name="title" />
+              <input className="input" pattern="\w{3,16}" required name="title" />
             </div>
             <div className="inputDiv">
               <label className="label">Description</label>

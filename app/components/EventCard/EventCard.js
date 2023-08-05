@@ -1,6 +1,8 @@
 import style from "./EventCard.module.css";
+import { useRouter } from 'next/navigation'
 
 const EventCard = ({
+  id,
   category = "art",
   priority = "high",
   image = "",
@@ -8,7 +10,9 @@ const EventCard = ({
   location = "Kyiv",
   title = "Galery Opening",
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+  date,
 }) => {
+  const router = useRouter()
   return (
     <div >
       <div
@@ -24,14 +28,14 @@ const EventCard = ({
         </div>
         <div className={style.eventCardDivDecs}>
           <div className={style.eventCardTimeDiv}>
-            <p className={style.eventCardTime}>{time}</p>
+            <p className={style.eventCardTime}>{date + " at " + time}</p>
             <p className={style.eventCardLocation}>{location}</p>
           </div>
           <div className={style.eventCardTitleDiv}>
             <h2 className={style.eventCardTitle}>{title}</h2>
             <h2 className={style.eventCardDescription}>{description}</h2>
             <div className={style}>
-              <button className={style.eventCardButton}>More info</button>
+              <button onClick={()=> router.push(`/event/${id}`)} className={style.eventCardButton}>More info</button>
             </div>
           </div>
         </div>

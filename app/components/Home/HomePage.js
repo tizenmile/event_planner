@@ -5,23 +5,29 @@ import {event, addEventData } from "../EventCard/eventData";
 import AddNewButton from "./AddNewButton";
 import Category from "./Category";
 import Sort from "./Sort";
-import style from "./hero.module.css";
+import style from "./home.module.css";
 import AddNew from "../AddNewEvent/AddNew";
+import { useRouter } from 'next/navigation'
 
-const Hero = () => {
+const HomePage = () => {
+  const router = useRouter()
   const [events, setEvents] = useState(event);
-  const [modal, setModal] = useState(false);
+  const [openAddNewEvent, setOpenAddNewEvent] = useState(false);
+  const [categorySortList, setSategorySortList] = useState(event.map(e => e.category));
+  console.log(categorySortList);
 
-  const toggle = () => setModal(!modal);
+  const toggle = () => setOpenAddNewEvent(!openAddNewEvent);
+
 
   const addEvent = (data) => {
     setEvents(addEventData(data));
     toggle();
   };
 
+
   return (
     <div className={style.heroDiv}>
-      {modal ? (
+      {openAddNewEvent ? (
         <AddNew toggle={toggle} addEvent={addEvent} />
       ) : (
         <div>
@@ -43,9 +49,11 @@ const Hero = () => {
                 location,
                 title,
                 description,
+                date
               }) => (
                 <EventCard
                   key={id}
+                  id={id}
                   category={category}
                   priority={priority}
                   image={image}
@@ -53,6 +61,8 @@ const Hero = () => {
                   location={location}
                   title={title}
                   description={description}
+                  date={date}
+                  // editEvent={editEvent}
                 />
               )
             )}
@@ -63,4 +73,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default HomePage;

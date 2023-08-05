@@ -1,8 +1,6 @@
-import Image from "next/image";
-import styles from "./page.module.css";
 
-import Hero from "./components/Hero/Hero";
+import HomePage from "./components/Home/HomePage";
 
 export default function Home() {
-  return <Hero />;
+  return <HomePage />;
 }

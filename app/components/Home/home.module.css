@@ -1,0 +1,127 @@
+.heroDiv {
+  background: url(../../../public/GeoWave.svg) center;
+  height: 100vh;
+}
+
+.heroButtons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: "center";
+}
+
+.addButton,
+.sortButton,
+.categoryButton {
+  color: inherit;
+  font: inherit;
+  border: none;
+  line-height: normal;
+  overflow: visible;
+  background: transparent;
+  display: inline-flex;
+  padding: 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  border-radius: 8px;
+  background: #7b61ff;
+
+  /* sdw2 */
+  box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
+  margin: 40px 12px;
+}
+
+.sortButton,
+.categoryButton {
+  background: #fff;
+}
+
+.addButton {
+  margin-right: 24px;
+}
+
+.eventCard {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, max(302px, 100%/5)), 1fr)
+  );
+  grid-gap: 24px;
+  -ms-grid-row-align: 40px;
+
+  /* justify-items: center; */
+  width: 90%;
+  margin: 0 auto;
+  /* gap: 24px; */
+}
+.categoryListDiv {
+  position: absolute;
+  display: none;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  border-radius: 8px;
+  background: #fff;
+  padding: 5px;
+}
+.categoryButton:hover .categoryListDiv {
+  display: flex;
+}
+.categoryButton {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.categoryList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.categoryListItem:hover .categoryListButton {
+  border-bottom: 1px solid #7b61ff;
+  color: #7b61ff;
+}
+.categoryListButton {
+  border: none;
+  background: #fff;
+  display: flex;
+  padding: 4px 24px;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  width: 100%;
+  color: #aca7c3;
+  border-bottom: 1px solid #aca7c3;
+}
+
+.categoryListItem {
+  display: flex;
+  align-items: center;
+  height: 32px;
+}
+
+.categoryHoverTitle {
+  color: #7b61ff;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.sortListDiv {
+  display: none;
+}
+
+.sortButton {
+  position: relative;
+}
+.sortButton:hover {
+  .sortListDiv {
+    display: flex;
+  }
+}
