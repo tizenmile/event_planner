@@ -1,3 +1,4 @@
+import Link from "next/link";
 import style from "./EventCard.module.css";
 import { useRouter } from 'next/navigation'
 
@@ -35,7 +36,8 @@ const EventCard = ({
             <h2 className={style.eventCardTitle}>{title}</h2>
             <h2 className={style.eventCardDescription}>{description}</h2>
             <div className={style}>
-              <button onClick={()=> router.push(`/event/${id}`)} className={style.eventCardButton}>More info</button>
+              <Link href={`/event/${id}`} className={style.eventCardButton}>More info</Link>
+
             </div>
           </div>
         </div>

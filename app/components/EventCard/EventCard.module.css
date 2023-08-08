@@ -116,6 +116,8 @@
   float: right;
   margin-right: 16px;
   margin-bottom: 16px;
+  text-decoration: none;
+
 }
 .eventCardButton:hover {
   background: #6243ff;
