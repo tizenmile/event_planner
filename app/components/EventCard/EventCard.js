@@ -36,7 +36,7 @@ const EventCard = ({
             <h2 className={style.eventCardTitle}>{title}</h2>
             <h2 className={style.eventCardDescription}>{description}</h2>
             <div className={style}>
-              <Link href={`/event/${id}`} className={style.eventCardButton}>More info</Link>
+              <Link href={`/event/${id}`} passHref className={style.eventCardButton}>More info</Link>
 
             </div>
           </div>
