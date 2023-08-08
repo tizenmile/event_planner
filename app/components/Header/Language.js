@@ -1,4 +1,4 @@
-import style from "../../page.module.css";
+import style from './header.module.css';
 
 const Language = () => {
   return (

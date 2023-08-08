@@ -1,6 +1,7 @@
 .heroDiv {
   background: url(../../../public/GeoWave.svg) center;
-  height: 100vh;
+  /* height: 100vh; */
+
 }
 
 .heroButtons {

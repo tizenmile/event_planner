@@ -1,16 +1,14 @@
-import style from "../../page.module.css";
+import style from "./header.module.css";
 import Language from "./Language";
 import Search from "./Search";
 
-const Header = () => {
+const Header = ({setSearchInput}) => {
   return (
-    <header>
+    <header className={style.header}>
       <div className={style.headerDiv}>
-        <div className={style.headerGroup}>
           <h2 className={style.headerTitle}>Event Planner</h2>
+          <Search setSearchInput={setSearchInput}/>
           <Language />
-        </div>
-        <Search/>
       </div>
     </header>
   );

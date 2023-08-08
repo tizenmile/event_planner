@@ -1,0 +1,110 @@
+.header {
+  width: 100%;
+  background-color: rgb(254, 252, 255);
+  border-bottom: 1px solid rgb(123, 97, 255);
+}
+
+.headerTitle {
+  color: #7b61ff;
+  font-family: Alata;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  grid-area: a / a / a / a;
+}
+
+.headerDiv {
+    
+  padding: 32px 24px 24px 0;
+  width: 320px;
+  margin: 0 auto;
+
+  display: grid;
+  gap: 24px;
+  grid-template-areas:
+    "a a b"
+    "c c c";
+  align-items: center;
+}
+
+.languageDiv {
+  border-radius: 8px;
+  background: #fff;
+
+  /* sdw2 */
+  box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
+  display: flex;
+  width: 69px;
+  padding: 8px 6px 8px 6px;
+  align-items: center;
+  gap: 4px;
+  height: 38px;
+  grid-area: b / b / b / b;
+  outline: none;
+}
+
+.langSelect {
+  color: #3f3f3f;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+}
+
+.searchInput {
+  display: flex;
+  width: 272px;
+  height: 38px;
+  margin: 0;
+  justify-content: center;
+  border: none;
+  border-radius: 8px;
+  background: #fff;
+  padding: 9px 4px 9px 50px;
+  box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
+  background: transparent url(../../../public/search.svg) no-repeat 13px center;
+  color: #888;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 100%;
+  position: relative;
+  grid-area: c;
+}
+
+@media screen and (min-width: 786px) {
+  .headerDiv {
+    gap: 24px;
+    grid-template-areas: "a c b";
+    grid-template-columns: 1fr 442px 112px;
+
+    width: 768px;
+    padding: 26px 40px;
+    margin: 0 auto;
+  }
+  .searchInput {
+    width: 368px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .headerDiv {
+    grid-template-columns: 1fr 621px 263px;
+    margin: 0 auto;
+
+    width: 1280px;
+    padding: 22px 4px;
+    justify-items: center;
+    align-items: center;
+  }
+  .searchInput {
+    width: 410px;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -2,19 +2,19 @@ import image from "../../../public/Rectangle330.png";
 const event = [
   {
     id: 1,
-    category: "art",
+    category: "Business",
     priority: "High",
     image: image.src,
     time: "12:00",
     date: "2023-07-22",
     location: "kyiv",
-    title: "Galery Opening",
+    title: "Leadership Conference",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+      "Unlock the secrets of effective leadership at our transformative Success Leadership Conference.",
   },
   {
     id: 2,
-    category: "art",
+    category: "Music",
     priority: "Low",
     image: image.src,
     time: "12:00",
@@ -26,7 +26,7 @@ const event = [
   },
   {
     id: 3,
-    category: "art",
+    category: "Sport",
     priority: "Medium",
     image: image.src,
     time: "12:00",
@@ -38,7 +38,7 @@ const event = [
   },
   {
     id: 4,
-    category: "art",
+    category: "Business",
     priority: "Medium",
     image: image.src,
     time: "12:00",
@@ -50,7 +50,7 @@ const event = [
   },
   {
     id: 5,
-    category: "art",
+    category: "Conference",
     priority: "Medium",
     image: image.src,
     time: "12:00",
@@ -62,7 +62,7 @@ const event = [
   },
   {
     id: 6,
-    category: "art",
+    category: "Workshop",
     priority: "Medium",
     image: image.src,
     time: "12:00",
@@ -74,7 +74,7 @@ const event = [
   },
   {
     id: 7,
-    category: "art",
+    category: "Party",
     priority: "Medium",
     image: image.src,
     time: "12:00",
@@ -82,8 +82,9 @@ const event = [
     location: "kyiv",
     title: "Galery Opening",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
   },
+
 ];
 const addEventData = (data) => {
   if (!data) {

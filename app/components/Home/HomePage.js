@@ -8,16 +8,15 @@ import Sort from "./Sort";
 import style from "./home.module.css";
 import AddNew from "../AddNewEvent/AddNew";
 import { useRouter } from 'next/navigation'
+import Header from "../Header/Header";
 
 const HomePage = () => {
   const router = useRouter()
   const [events, setEvents] = useState(event);
   const [openAddNewEvent, setOpenAddNewEvent] = useState(false);
-  const [categorySortList, setSategorySortList] = useState(event.map(e => e.category));
-  console.log(categorySortList);
-
+  const [categorySortList, setSategorySortList] = useState("");
+  const [searchInput, setSearchInput] = useState('')
   const toggle = () => setOpenAddNewEvent(!openAddNewEvent);
-
 
   const addEvent = (data) => {
     setEvents(addEventData(data));
@@ -25,20 +24,24 @@ const HomePage = () => {
   };
 
 
+
   return (
     <div className={style.heroDiv}>
+      <Header setSearchInput={setSearchInput}/>
       {openAddNewEvent ? (
         <AddNew toggle={toggle} addEvent={addEvent} />
       ) : (
         <div>
           <div className={style.heroButtons}>
-            <Category />
+            <Category setSategorySortList={setSategorySortList} categorySortList={categorySortList} />
             <Sort />
             <AddNewButton toggle={toggle} />
           </div>
           <div className={style.eventCard}>
             {events
             .sort((a, b) => a.id > b.id ? -1 : 1)
+            .filter((item, index, array) => categorySortList ? item.category === categorySortList : array)
+            .filter((item, index,array)=> searchInput ? item.title.toLowerCase().includes(searchInput.toLowerCase()) : array)
             .map(
               ({
                 id,
