@@ -4,7 +4,7 @@ const nextConfig = {
       loader: 'akamai',
       path: '',
     },
-    assetPrefix: './',
+    assetPrefix: 'https://tizenmile.github.io/event_planner/',
   };
 
 module.exports = nextConfig
