@@ -20,5 +20,8 @@
     "react-filepond": "^7.1.2",
     "sass": "^1.64.2",
     "sharp": "^0.32.4"
+  },
+  "devDependencies": {
+    "@netlify/plugin-nextjs": "^4.29.5-appdir.0"
   }
 }
