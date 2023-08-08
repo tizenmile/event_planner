@@ -3,7 +3,6 @@ import { useRouter } from "next/navigation";
 import "./editEvent.css";
 import leftArrow from "@/public/arrow-left.svg";
 import { event } from "@/app/components/EventCard/eventData";
-// import { event } from "../../../components/EventCard/eventData";
 import style from "./EventCard.module.css";
 import Image from "next/image";
 import { useState } from "react";
@@ -12,7 +11,6 @@ const EditEvent = ({ params }) => {
   const router = useRouter();
   const [openEditor, setOpenEditor] = useState(false);
   const {
-    id,
     category,
     priority,
     image,
@@ -21,7 +19,7 @@ const EditEvent = ({ params }) => {
     location,
     title,
     description,
-  } = event.find((e) => e.id === Number(params.id));
+  } = event.find((e) => e?.id || 1 === Number(params?.id || 1));
 
   const toggle = () => {
     setOpenEditor(!openEditor);
@@ -33,20 +31,16 @@ const EditEvent = ({ params }) => {
     data.forEach((value, key) => (formDataObj[key] = value));
     formDataObj.id = Number(params.id);
     formDataObj.image = image;
-    // console.log();
     event.forEach((o, i) => {
       if (o.id == params.id) event[i] = formDataObj;
     });
-    console.log(event);
     toggle();
-    // addEvent(formDataObj)
   };
 
   const handleDelete =() => {
     event.forEach((o, i) => {
       if (o.id == params.id) event.splice(i, 1);
     });
-    console.log(event);
     router.push('/')
   }
 
@@ -192,70 +186,3 @@ const EditEvent = ({ params }) => {
 };
 
 export default EditEvent;
-
-{
-  /* <div>
-          <button className="backButton" onClick={() => router.push(`/`)}>
-            <Image src={leftArrow} alt="left arrow" />
-            Back
-          </button>
-          <h2 className="newEventTitle">Edit Event</h2>
-          <div>
-            <form className="addNewForm" onSubmit={(e) => handleSubmit(e)}>
-              <div className="formDiv">
-                <div className="inputDiv">
-                  <label className="label">Title</label>
-                  <input className="input" name="title" />
-                </div>
-                <div className="inputDiv">
-                  <label className="label">Description</label>
-                  <input className="input inputDesc" name="description" />
-                </div>
-                <div className="inputDiv">
-                  <label className="label">Select date</label>
-                  <input className="input" type="date" name="date" />
-                </div>
-                <div className="inputDiv">
-                  <label className="label">Select time</label>
-                  <input className="input" type="time" name="time" />
-                </div>
-                <div className="inputDiv">
-                  <label className="label">Location</label>
-                  <input className="input" name="location" />
-                </div>
-                <div className="inputDiv">
-                  <label className="label">Category</label>
-                  <select
-                    className="input select"
-                    name="category"
-                    defaultValue={"Art"}
-                  >
-                    <option value="Art">Art</option>
-                    <option value="Music">Music</option>
-                    <option value="Business">Business</option>
-                    <option value="Conference">Conference</option>
-                    <option value="Workshop">Workshop</option>
-                    <option value="Party">Party</option>
-                    <option value="Sport">Sport</option>
-                  </select>
-                </div>
-                <div className="inputDiv">
-                  <label className="label">Add picture</label>
-                  <input disabled accept="image/*" className="input" name="picture" />
-                </div>
-                <div className="inputDiv">
-                  <label className="label">Priority</label>
-                  <select className="input select" name="priority">
-                    <option value="High">High</option>
-                    <option value="Medium">Medium</option>
-                    <option value="Low">Low</option>
-                  </select>
-                </div>
-              </div>
-              <button className="buttonSubmit" type="submit">
-                Add event
-              </button>
-            </form>
-          </div>
-        </div> */
-}
